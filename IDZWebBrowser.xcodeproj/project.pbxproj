@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C0CDE7D18383E73005C661F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0CDE7C18383E73005C661F /* Foundation.framework */; };
+		0C0CDE7F18383E73005C661F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0CDE7E18383E73005C661F /* CoreGraphics.framework */; };
+		0C0CDE8118383E73005C661F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0CDE8018383E73005C661F /* UIKit.framework */; };
+		0C0CDE8718383E73005C661F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C0CDE8518383E73005C661F /* InfoPlist.strings */; };
+		0C0CDE8918383E73005C661F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CDE8818383E73005C661F /* main.m */; };
+		0C0CDE8D18383E73005C661F /* IDZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CDE8C18383E73005C661F /* IDZAppDelegate.m */; };
+		0C0CDE9018383E73005C661F /* IDZWebBrowser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C0CDE8E18383E73005C661F /* IDZWebBrowser.storyboard */; };
+		0C0CDE9318383E73005C661F /* IDZWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CDE9218383E73005C661F /* IDZWebBrowserViewController.m */; };
+		0C0CDE9518383E73005C661F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C0CDE9418383E73005C661F /* Images.xcassets */; };
+		0C0CDE9C18383E73005C661F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0CDE9B18383E73005C661F /* XCTest.framework */; };
+		0C0CDE9D18383E74005C661F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0CDE7C18383E73005C661F /* Foundation.framework */; };
+		0C0CDE9E18383E74005C661F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0CDE8018383E73005C661F /* UIKit.framework */; };
+		0C0CDEA618383E74005C661F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C0CDEA418383E74005C661F /* InfoPlist.strings */; };
+		0C0CDEA818383E74005C661F /* IDZWebBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CDEA718383E74005C661F /* IDZWebBrowserTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0C0CDE9F18383E74005C661F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C0CDE7118383E73005C661F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C0CDE7818383E73005C661F;
+			remoteInfo = IDZWebBrowser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C0CDE7918383E73005C661F /* IDZWebBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDZWebBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C0CDE7C18383E73005C661F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0C0CDE7E18383E73005C661F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0C0CDE8018383E73005C661F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0C0CDE8418383E73005C661F /* IDZWebBrowser-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IDZWebBrowser-Info.plist"; sourceTree = "<group>"; };
+		0C0CDE8618383E73005C661F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0C0CDE8818383E73005C661F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0C0CDE8A18383E73005C661F /* IDZWebBrowser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IDZWebBrowser-Prefix.pch"; sourceTree = "<group>"; };
+		0C0CDE8B18383E73005C661F /* IDZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDZAppDelegate.h; sourceTree = "<group>"; };
+		0C0CDE8C18383E73005C661F /* IDZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDZAppDelegate.m; sourceTree = "<group>"; };
+		0C0CDE8F18383E73005C661F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/IDZWebBrowser.storyboard; sourceTree = "<group>"; };
+		0C0CDE9118383E73005C661F /* IDZWebBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDZWebBrowserViewController.h; sourceTree = "<group>"; };
+		0C0CDE9218383E73005C661F /* IDZWebBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDZWebBrowserViewController.m; sourceTree = "<group>"; };
+		0C0CDE9418383E73005C661F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0C0CDE9A18383E73005C661F /* IDZWebBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDZWebBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C0CDE9B18383E73005C661F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		0C0CDEA318383E74005C661F /* IDZWebBrowserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IDZWebBrowserTests-Info.plist"; sourceTree = "<group>"; };
+		0C0CDEA518383E74005C661F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0C0CDEA718383E74005C661F /* IDZWebBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDZWebBrowserTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C0CDE7618383E73005C661F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C0CDE7F18383E73005C661F /* CoreGraphics.framework in Frameworks */,
+				0C0CDE8118383E73005C661F /* UIKit.framework in Frameworks */,
+				0C0CDE7D18383E73005C661F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C0CDE9718383E73005C661F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C0CDE9C18383E73005C661F /* XCTest.framework in Frameworks */,
+				0C0CDE9E18383E74005C661F /* UIKit.framework in Frameworks */,
+				0C0CDE9D18383E74005C661F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C0CDE7018383E73005C661F = {
+			isa = PBXGroup;
+			children = (
+				0C0CDE8218383E73005C661F /* IDZWebBrowser */,
+				0C0CDEA118383E74005C661F /* IDZWebBrowserTests */,
+				0C0CDE7B18383E73005C661F /* Frameworks */,
+				0C0CDE7A18383E73005C661F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0C0CDE7A18383E73005C661F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CDE7918383E73005C661F /* IDZWebBrowser.app */,
+				0C0CDE9A18383E73005C661F /* IDZWebBrowserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C0CDE7B18383E73005C661F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CDE7C18383E73005C661F /* Foundation.framework */,
+				0C0CDE7E18383E73005C661F /* CoreGraphics.framework */,
+				0C0CDE8018383E73005C661F /* UIKit.framework */,
+				0C0CDE9B18383E73005C661F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0C0CDE8218383E73005C661F /* IDZWebBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CDE8B18383E73005C661F /* IDZAppDelegate.h */,
+				0C0CDE8C18383E73005C661F /* IDZAppDelegate.m */,
+				0C0CDE8E18383E73005C661F /* IDZWebBrowser.storyboard */,
+				0C0CDE9118383E73005C661F /* IDZWebBrowserViewController.h */,
+				0C0CDE9218383E73005C661F /* IDZWebBrowserViewController.m */,
+				0C0CDE9418383E73005C661F /* Images.xcassets */,
+				0C0CDE8318383E73005C661F /* Supporting Files */,
+			);
+			path = IDZWebBrowser;
+			sourceTree = "<group>";
+		};
+		0C0CDE8318383E73005C661F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CDE8418383E73005C661F /* IDZWebBrowser-Info.plist */,
+				0C0CDE8518383E73005C661F /* InfoPlist.strings */,
+				0C0CDE8818383E73005C661F /* main.m */,
+				0C0CDE8A18383E73005C661F /* IDZWebBrowser-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0C0CDEA118383E74005C661F /* IDZWebBrowserTests */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CDEA718383E74005C661F /* IDZWebBrowserTests.m */,
+				0C0CDEA218383E74005C661F /* Supporting Files */,
+			);
+			path = IDZWebBrowserTests;
+			sourceTree = "<group>";
+		};
+		0C0CDEA218383E74005C661F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CDEA318383E74005C661F /* IDZWebBrowserTests-Info.plist */,
+				0C0CDEA418383E74005C661F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0C0CDE7818383E73005C661F /* IDZWebBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C0CDEAB18383E74005C661F /* Build configuration list for PBXNativeTarget "IDZWebBrowser" */;
+			buildPhases = (
+				0C0CDE7518383E73005C661F /* Sources */,
+				0C0CDE7618383E73005C661F /* Frameworks */,
+				0C0CDE7718383E73005C661F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IDZWebBrowser;
+			productName = IDZWebBrowser;
+			productReference = 0C0CDE7918383E73005C661F /* IDZWebBrowser.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0C0CDE9918383E73005C661F /* IDZWebBrowserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C0CDEAE18383E74005C661F /* Build configuration list for PBXNativeTarget "IDZWebBrowserTests" */;
+			buildPhases = (
+				0C0CDE9618383E73005C661F /* Sources */,
+				0C0CDE9718383E73005C661F /* Frameworks */,
+				0C0CDE9818383E73005C661F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C0CDEA018383E74005C661F /* PBXTargetDependency */,
+			);
+			name = IDZWebBrowserTests;
+			productName = IDZWebBrowserTests;
+			productReference = 0C0CDE9A18383E73005C661F /* IDZWebBrowserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0C0CDE7118383E73005C661F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = IDZ;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = iOSDeveloperZone.com;
+				TargetAttributes = {
+					0C0CDE9918383E73005C661F = {
+						TestTargetID = 0C0CDE7818383E73005C661F;
+					};
+				};
+			};
+			buildConfigurationList = 0C0CDE7418383E73005C661F /* Build configuration list for PBXProject "IDZWebBrowser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0C0CDE7018383E73005C661F;
+			productRefGroup = 0C0CDE7A18383E73005C661F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0C0CDE7818383E73005C661F /* IDZWebBrowser */,
+				0C0CDE9918383E73005C661F /* IDZWebBrowserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0C0CDE7718383E73005C661F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C0CDE9518383E73005C661F /* Images.xcassets in Resources */,
+				0C0CDE8718383E73005C661F /* InfoPlist.strings in Resources */,
+				0C0CDE9018383E73005C661F /* IDZWebBrowser.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C0CDE9818383E73005C661F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C0CDEA618383E74005C661F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C0CDE7518383E73005C661F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C0CDE8D18383E73005C661F /* IDZAppDelegate.m in Sources */,
+				0C0CDE8918383E73005C661F /* main.m in Sources */,
+				0C0CDE9318383E73005C661F /* IDZWebBrowserViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C0CDE9618383E73005C661F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C0CDEA818383E74005C661F /* IDZWebBrowserTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0C0CDEA018383E74005C661F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C0CDE7818383E73005C661F /* IDZWebBrowser */;
+			targetProxy = 0C0CDE9F18383E74005C661F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0C0CDE8518383E73005C661F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C0CDE8618383E73005C661F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0C0CDE8E18383E73005C661F /* IDZWebBrowser.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C0CDE8F18383E73005C661F /* Base */,
+			);
+			name = IDZWebBrowser.storyboard;
+			sourceTree = "<group>";
+		};
+		0C0CDEA418383E74005C661F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C0CDEA518383E74005C661F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0C0CDEA918383E74005C661F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0C0CDEAA18383E74005C661F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0C0CDEAC18383E74005C661F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDZWebBrowser/IDZWebBrowser-Prefix.pch";
+				INFOPLIST_FILE = "IDZWebBrowser/IDZWebBrowser-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0C0CDEAD18383E74005C661F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDZWebBrowser/IDZWebBrowser-Prefix.pch";
+				INFOPLIST_FILE = "IDZWebBrowser/IDZWebBrowser-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0C0CDEAF18383E74005C661F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IDZWebBrowser.app/IDZWebBrowser";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDZWebBrowser/IDZWebBrowser-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "IDZWebBrowserTests/IDZWebBrowserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		0C0CDEB018383E74005C661F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IDZWebBrowser.app/IDZWebBrowser";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDZWebBrowser/IDZWebBrowser-Prefix.pch";
+				INFOPLIST_FILE = "IDZWebBrowserTests/IDZWebBrowserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0C0CDE7418383E73005C661F /* Build configuration list for PBXProject "IDZWebBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C0CDEA918383E74005C661F /* Debug */,
+				0C0CDEAA18383E74005C661F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C0CDEAB18383E74005C661F /* Build configuration list for PBXNativeTarget "IDZWebBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C0CDEAC18383E74005C661F /* Debug */,
+				0C0CDEAD18383E74005C661F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C0CDEAE18383E74005C661F /* Build configuration list for PBXNativeTarget "IDZWebBrowserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C0CDEAF18383E74005C661F /* Debug */,
+				0C0CDEB018383E74005C661F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0C0CDE7118383E73005C661F /* Project object */;
+}
