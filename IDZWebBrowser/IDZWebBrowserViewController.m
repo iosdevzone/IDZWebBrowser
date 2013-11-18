@@ -27,7 +27,7 @@
 
 #import "IDZWebBrowserViewController.h"
 
-@interface IDZWebBrowserViewController ()
+@interface IDZWebBrowserViewController () <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *back;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *stop;
@@ -35,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *forward;
 
 - (void)loadRequestFromString:(NSString*)urlString;
+- (void)updateButtons;
 @end
 
 @implementation IDZWebBrowserViewController
@@ -53,6 +54,7 @@
     NSAssert((self.forward.target == self.webView) && (self.forward.action = @selector(goForward)), @"Your forward button action is not connected to goForward.");
     NSAssert(self.webView.scalesPageToFit, @"You forgot to check 'Scales Page to Fit' for your web view.");
 	// Do any additional setup after loading the view, typically from a nib.
+    self.webView.delegate = self;
     [self loadRequestFromString:@"http://iosdeveloperzone.com"];
 }
 
@@ -67,6 +69,38 @@
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:urlRequest];
+}
+
+#pragma mark - Updating the UI
+- (void)updateButtons
+{
+    NSLog(@"%s loading = %@", __PRETTY_FUNCTION__, self.webView.loading ? @"YES" : @"NO");
+    self.forward.enabled = self.webView.canGoForward;
+    self.back.enabled = self.webView.canGoBack;
+    self.stop.enabled = self.webView.loading;
+}
+
+#pragma mark - UIWebViewDelegate
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    return YES;
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [self updateButtons];
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self updateButtons];
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self updateButtons];
 }
 
 @end
