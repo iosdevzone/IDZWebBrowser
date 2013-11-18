@@ -28,7 +28,13 @@
 #import "IDZWebBrowserViewController.h"
 
 @interface IDZWebBrowserViewController ()
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *back;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *stop;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *refresh;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *forward;
 
+- (void)loadRequestFromString:(NSString*)urlString;
 @end
 
 @implementation IDZWebBrowserViewController
@@ -36,13 +42,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSAssert([self.webView isKindOfClass:[UIWebView class]], @"You webView outlet is not correctly connected.");
+    NSAssert(self.back, @"Your back button outlet is not correctly connected");
+    NSAssert(self.stop, @"Your stop button outlet is not correctly connected");
+    NSAssert(self.refresh, @"Your refresh button outlet is not correctly connected");
+    NSAssert(self.forward, @"Your forward button outlet is not correctly connected");
+    NSAssert((self.back.target == self.webView) && (self.back.action = @selector(goBack)), @"Your back button action is not connected to goBack.");
+    NSAssert((self.stop.target == self.webView) && (self.stop.action = @selector(stopLoading)), @"Your stop button action is not connected to stopLoading.");
+    NSAssert((self.refresh  .target == self.webView) && (self.refresh.action = @selector(reload)), @"Your refresh button action is not connected to reload.");
+    NSAssert((self.forward.target == self.webView) && (self.forward.action = @selector(goForward)), @"Your forward button action is not connected to goForward.");
+    NSAssert(self.webView.scalesPageToFit, @"You forgot to check 'Scales Page to Fit' for your web view.");
 	// Do any additional setup after loading the view, typically from a nib.
+    [self loadRequestFromString:@"http://iosdeveloperzone.com"];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)loadRequestFromString:(NSString*)urlString
+{
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:urlRequest];
 }
 
 @end

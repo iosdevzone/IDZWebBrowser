@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rq8-Gl-arP">
+                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rq8-Gl-arP">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -25,15 +25,38 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem systemItem="rewind" id="rLV-Ed-FGq"/>
+                        <barButtonItem systemItem="rewind" id="rLV-Ed-FGq">
+                            <connections>
+                                <action selector="goBack" destination="Rq8-Gl-arP" id="sIP-lm-eAa"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="8c6-ft-7oz"/>
-                        <barButtonItem systemItem="stop" id="c5f-es-Fpf"/>
+                        <barButtonItem systemItem="stop" id="c5f-es-Fpf">
+                            <connections>
+                                <action selector="stopLoading" destination="Rq8-Gl-arP" id="QEI-dX-B9Z"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="JHU-KC-9i7"/>
-                        <barButtonItem systemItem="refresh" id="aqd-To-lOc"/>
+                        <barButtonItem systemItem="refresh" id="aqd-To-lOc">
+                            <connections>
+                                <action selector="reload" destination="Rq8-Gl-arP" id="QSA-Kt-Yb9"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="VtV-qU-gA3"/>
-                        <barButtonItem systemItem="fastForward" id="VBD-O7-4r5"/>
+                        <barButtonItem systemItem="fastForward" id="VBD-O7-4r5">
+                            <connections>
+                                <action selector="goForward" destination="Rq8-Gl-arP" id="QLu-L7-FJM"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="ekZ-S5-8nF"/>
+                    <connections>
+                        <outlet property="back" destination="rLV-Ed-FGq" id="1gk-SV-gKn"/>
+                        <outlet property="forward" destination="VBD-O7-4r5" id="Fzf-OJ-RjB"/>
+                        <outlet property="refresh" destination="aqd-To-lOc" id="i1w-T0-A26"/>
+                        <outlet property="stop" destination="c5f-es-Fpf" id="WKf-Ke-Ccs"/>
+                        <outlet property="webView" destination="Rq8-Gl-arP" id="K2R-p1-QQN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
