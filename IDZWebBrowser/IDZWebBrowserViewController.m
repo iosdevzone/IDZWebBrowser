@@ -27,6 +27,13 @@
 
 #import "IDZWebBrowserViewController.h"
 
+static const CGFloat kNavBarHeight = 52.0f;
+static const CGFloat kLabelHeight = 14.0f;
+static const CGFloat kMargin = 10.0f;
+static const CGFloat kSpacer = 2.0f;
+static const CGFloat kLabelFontSize = 12.0f;
+static const CGFloat kAddressHeight = 24.0f;
+
 @interface IDZWebBrowserViewController () <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *back;
@@ -34,8 +41,14 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *refresh;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *forward;
 
+@property (strong, nonatomic) UILabel *pageTitle;
+@property (strong, nonatomic) UITextField *addressField;
+
+- (void)loadRequestFromAddressField:(id)addressField;
 - (void)loadRequestFromString:(NSString*)urlString;
+
 - (void)updateButtons;
+- (void)updateTitle:(UIWebView*)aWebView;
 @end
 
 @implementation IDZWebBrowserViewController
@@ -53,7 +66,35 @@
     NSAssert((self.refresh  .target == self.webView) && (self.refresh.action = @selector(reload)), @"Your refresh button action is not connected to reload.");
     NSAssert((self.forward.target == self.webView) && (self.forward.action = @selector(goForward)), @"Your forward button action is not connected to goForward.");
     NSAssert(self.webView.scalesPageToFit, @"You forgot to check 'Scales Page to Fit' for your web view.");
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    /* Create the page title label */
+    UINavigationBar *navBar = self.navigationController.navigationBar;
+    CGRect labelFrame = CGRectMake(kMargin, kSpacer,
+                                   navBar.bounds.size.width - 2*kMargin, kLabelHeight);
+    UILabel *label = [[UILabel alloc] initWithFrame:labelFrame];
+    label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont systemFontOfSize:12];
+    label.textAlignment = NSTextAlignmentCenter;
+    [navBar addSubview:label];
+    self.pageTitle = label;
+    
+    /* Create the address bar */
+    CGRect addressFrame = CGRectMake(kMargin, kSpacer*2.0 + kLabelHeight,
+                                     labelFrame.size.width, kAddressHeight);
+    UITextField *address = [[UITextField alloc] initWithFrame:addressFrame];
+    address.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    address.borderStyle = UITextBorderStyleRoundedRect;
+    address.font = [UIFont systemFontOfSize:17];
+    address.keyboardType = UIKeyboardTypeURL;
+    address.autocapitalizationType =UITextAutocapitalizationTypeNone;
+    address.autocorrectionType = UITextAutocorrectionTypeNo;
+    [address addTarget:self
+                action:@selector(loadRequestFromAddressField:)
+      forControlEvents:UIControlEventEditingDidEndOnExit];
+    [navBar addSubview:address];
+    self.addressField = address;
+    
     self.webView.delegate = self;
     [self loadRequestFromString:@"http://iosdeveloperzone.com"];
 }
@@ -62,6 +103,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Loading URLs
+
+- (void)loadRequestFromAddressField:(id)addressField
+{
+    NSString *urlString = [addressField text];
+    [self loadRequestFromString:urlString];
 }
 
 - (void)loadRequestFromString:(NSString*)urlString
@@ -74,10 +123,15 @@
 #pragma mark - Updating the UI
 - (void)updateButtons
 {
-    NSLog(@"%s loading = %@", __PRETTY_FUNCTION__, self.webView.loading ? @"YES" : @"NO");
     self.forward.enabled = self.webView.canGoForward;
     self.back.enabled = self.webView.canGoBack;
     self.stop.enabled = self.webView.loading;
+}
+
+- (void)updateTitle:(UIWebView*)aWebView
+{
+    NSString* pageTitle = [aWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    self.pageTitle.text = pageTitle;
 }
 
 #pragma mark - UIWebViewDelegate
@@ -93,9 +147,9 @@
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self updateButtons];
+    [self updateTitle:webView];
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
