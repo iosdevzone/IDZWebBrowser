@@ -86,9 +86,6 @@ static const CGFloat kAddressHeight = 24.0f;
     address.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     address.borderStyle = UITextBorderStyleRoundedRect;
     address.font = [UIFont systemFontOfSize:17];
-    address.keyboardType = UIKeyboardTypeURL;
-    address.autocapitalizationType =UITextAutocapitalizationTypeNone;
-    address.autocorrectionType = UITextAutocorrectionTypeNo;
     [address addTarget:self
                 action:@selector(loadRequestFromAddressField:)
       forControlEvents:UIControlEventEditingDidEndOnExit];
