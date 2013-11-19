@@ -49,6 +49,9 @@ static const CGFloat kAddressHeight = 24.0f;
 
 - (void)updateButtons;
 - (void)updateTitle:(UIWebView*)aWebView;
+- (void)updateAddress:(NSURLRequest*)request;
+
+- (void)informError:(NSError*)error;
 @end
 
 @implementation IDZWebBrowserViewController
@@ -86,6 +89,10 @@ static const CGFloat kAddressHeight = 24.0f;
     address.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     address.borderStyle = UITextBorderStyleRoundedRect;
     address.font = [UIFont systemFontOfSize:17];
+    address.keyboardType = UIKeyboardTypeURL;
+    address.autocapitalizationType =UITextAutocapitalizationTypeNone;
+    address.autocorrectionType = UITextAutocorrectionTypeNo;
+    address.clearButtonMode = UITextFieldViewModeWhileEditing;
     [address addTarget:self
                 action:@selector(loadRequestFromAddressField:)
       forControlEvents:UIControlEventEditingDidEndOnExit];
@@ -113,6 +120,11 @@ static const CGFloat kAddressHeight = 24.0f;
 - (void)loadRequestFromString:(NSString*)urlString
 {
     NSURL *url = [NSURL URLWithString:urlString];
+    if(!url.scheme)
+    {
+        NSString* modifiedURLString = [NSString stringWithFormat:@"http://%@", urlString];
+        url = [NSURL URLWithString:modifiedURLString];
+    }
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:urlRequest];
 }
@@ -131,9 +143,31 @@ static const CGFloat kAddressHeight = 24.0f;
     self.pageTitle.text = pageTitle;
 }
 
+- (void)updateAddress:(NSURLRequest*)request
+{
+    NSURL* url = [request mainDocumentURL];
+    NSString* absoluteString = [url absoluteString];
+    self.addressField.text = absoluteString;
+}
+
+#pragma mark - Error Handling
+
+- (void)informError:(NSError *)error
+{
+    NSString* localizedDescription = [error localizedDescription];
+    UIAlertView* alertView = [[UIAlertView alloc]
+                              initWithTitle:NSLocalizedString(@"Error", @"Title for error alert.")
+                              message:localizedDescription delegate:nil
+                              cancelButtonTitle:NSLocalizedString(@"OK", @"OK button in error alert.")
+                              otherButtonTitles:nil];
+    [alertView show];
+}
+
+
 #pragma mark - UIWebViewDelegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
+    [self updateAddress:request];
     return YES;
 }
 
@@ -147,11 +181,13 @@ static const CGFloat kAddressHeight = 24.0f;
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self updateButtons];
     [self updateTitle:webView];
+    [self updateAddress:[webView request]];
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self updateButtons];
+    [self informError:error];
 }
 
 @end
