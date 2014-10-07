@@ -1,3 +1,5 @@
+language: objective-c
+
 script:
 - xcodebuild -scheme IDZWebBrowser -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.0'
 
