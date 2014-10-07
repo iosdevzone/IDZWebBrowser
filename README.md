@@ -1,5 +1,4 @@
-IDZWebBrowser
-=============
+# IDZWebBrowser [![Build Status](https://travis-ci.org/iosdevzone/IDZWebBrowser.svg)](https://travis-ci.org/iosdevzone/IDZWebBrowser)
 
 Update version of "Building a Web Browser with UIWebView" tutorial series source code.
 
